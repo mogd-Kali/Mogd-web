@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Черно-Оранжевый YouTube</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        header {
+            background-color: #1a1a1a;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFA500;
+        }
+        nav {
+            background-color: #222;
+            padding: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #FFA500;
+            color: #000;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 10px;
+            background-color: #1a1a1a;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar li {
+            margin-bottom: 5px;
+        }
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+        .sidebar a:hover {
+            background-color: #FFA500;
+            color: #000;
+        }
+        .content {
+            flex: 1;
+            padding: 10px;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .video-item {
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            background-color: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 20px;
+        }
+        .video-info {
+            padding: 10px;
+        }
+        .video-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .video-channel {
+            font-size: 14px;
+            color: #aaa;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Черно-Оранжевый YouTube</div>
+        <nav>
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Тренды</a></li>
+                <li><a href="#">Подписки</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#">История</a></li>
+                <li><a href="#">Смотреть позже</a></li>
+                <li><a href="#">Понравившиеся</a></li>
+                <li><a href="#">Подписки</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <section class="video-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        Thumbnail 1
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Название видео 1</div>
+                        <div class="video-channel">Канал 1</div>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        Thumbnail 2
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Название видео 2</div>
+                        <div class="video-channel">Канал 2</div>
+                    </div>
+                </div>
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        Thumbnail 3
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">Название видео 3</div>
+                        <div class="video-channel">Канал 3</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Черно-Оранжевый YouTube
+    </footer>
+</body>
+</html>

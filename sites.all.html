@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список Сайтов</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            padding: 20px;
+        }
+        .search-section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-button {
+            padding: 10px 15px;
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .site-list {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .site-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .site-list li {
+            margin-bottom: 10px;
+        }
+        .site-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .site-list a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Список Сайтов</h1>
+        <div class="search-section">
+            <input type="text" class="search-input" placeholder="Поиск по названию сайта" id="searchInput">
+        </div>
+    </header>
+
+    <main>
+        <section class="site-list">
+            <ul id="siteList">
+                <li><a href="orangetube.mru.html">orangetube.mru</a></li>
+                <li><a href="mogd.web.html">mogd.web</a></li>
+                <li><a href="family-edition.1327.html">family-edition.1327</a></li>
+  <li><a href="time.com.html">time.com</a></li>    
+<li><a href="calc.com.html">calc.com</a></li>
+li><a href="time.com.html">time.com</a></li
+
+
+     
+ </ul>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2024 Список Сайтов
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const siteList = document.getElementById('siteList');
+        const listItems = siteList.getElementsByTagName('li');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+
+            for (let i = 0; i < listItems.length; i++) {
+                const listItem = listItems[i];
+                const link = listItem.querySelector('a');
+                const siteName = link.textContent.toLowerCase();
+
+                if (siteName.includes(searchTerm)) {
+                    listItem.style.display = 'block';
+                } else {
+                    listItem.style.display = 'none';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
