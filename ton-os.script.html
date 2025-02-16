@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TON OS - Скачивание</title>
+    <style>
+      body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Dark Grey */
+            color: #fff;
+        }
+
+        header {
+            background-color: #222; /* Light Dark Grey */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .installation-section {
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            background-color: #444; /* Dark Grey */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Glow */
+            text-align: left;
+        }
+
+        .installation-steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .installation-steps li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #555; /* Darker Grey */
+        }
+
+        footer {
+            background-color: #222; /* Light Dark Grey */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #444; /* Dark Grey */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Glow */
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TON OS - Загрузка</h1>
+    </header>
+
+    <main>
+        <section class="description">
+            <h2>Описание системы</h2>
+            <p>TON OS - это не полноценная операционная система, а всего лишь bash-скрипт, который эмулирует некоторые функции операционной системы в терминале Linux.</p>
+
+            <h3>Основные особенности:</h3>
+            <ul>
+                <li>Простой интерфейс командной строки</li>
+                <li>Основные команды для работы с файлами и системой</li>
+                <li>Минимальные требования к ресурсам</li>
+            </ul>
+        </section>
+        <section class="installation-section">
+            <h2>Установка</h2>
+            <p>Для установки TON OS выполните следующие шаги:</p>
+            <ol class="installation-steps">
+                <li><strong>Убедитесь, что установлен wget:</strong></li>
+                <li><strong>Kali Linux / Ubuntu / Debian:</strong>
+                    <p><code>sudo apt install wget</code></p>
+                </li>
+                <li><strong>Termux:</strong>
+                    <p><code>pkg install wget</code></p>
+                </li>
+                  <li><strong>Arch Linux:</strong>
+                    <p><code>pacman -S wget</code></p>
+                </li>
+                <li><strong>Скачайте скрипт установки:</strong>
+                    <p><code>wget https://raw.githubusercontent.com/mogd-Kali/TON-OS/refs/heads/main/ton%20os.sh</code></p>
+                </li>
+                <li><strong>Запустите скрипт:</strong>
+                    <p><code>bash ton os.sh</code></p>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 TON OS
+    </footer>
+</body>
+</html>
