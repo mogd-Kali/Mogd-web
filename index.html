@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">mogd web</title>
+    <title>Открыть файл</title>
     <style>
-        /* Светлая тема (по умолчанию) */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -20,7 +17,9 @@
             color: #333;
             text-align: center;
             padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         main {
@@ -50,7 +49,8 @@
             box-sizing: border-box;
         }
 
-        button {
+        button,
+        select {
             padding: 10px 20px;
             background-color: #4285f4;
             color: white;
@@ -68,9 +68,12 @@
             color: #333;
             text-align: center;
             padding: 10px;
-          
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
-         /* Темна тема */
+
+        /* Темна тема */
         body.dark-theme {
             background-color: #000;
             color: #fff;
@@ -93,159 +96,62 @@
             border: 1px solid #555;
             background-color: #444;
         }
-    }
-#themeButton {
-            padding: 10px 20px;
-            background-color: #808080;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 600px) {
-            .search-form {
-                width: 90%;
-                padding: 15px;
-            }
-            input[type="text"] {
-                width: 100%;
-            }
-        }
     </style>
 </head>
+
 <body>
     <header>
-        <h1 id="headerTitle">mogd web</h1>
-  <div class="language-selector">
-            <label for="languageSelect">Язык-Language:</label>
-            <select id="languageSelect" onchange="changeLanguage()">
-                <option value="ru" selected>Русский</option>
-                <option value="en">English</option>
-            </select>
-    <button onclick="toggleTheme()" id ="themeButton">Темная тема</button>
-        </div>
+        <h1 id="headerTitle">Mogd WebView</h1>
+        <button onclick="toggleTheme()" id="themeButton">Тёмная тема</button>
     </header>
-  <main>
-        <div class="search-form">
-            <h2 id="enterName">введите urlm-сайта</h2>
-            <input type="text" class="search-input" placeholder="Например, mogd.web.html" id="searchInput" oninput="validateInput(this)" maxlength="18">            
-            <button class="search-button" onclick="openFile()" id = "searchButton">Открыть</button>
+
+    <main>
+        <section class="search-form">
+            <h2 id="enterName">Введите urlm</h2>
+            <input type="text" class="search-input" placeholder="Например, mogd.web" id="searchInput">
+            <button class="search-button" onclick="openFile()">Открыть</button>
             <p id="message" style="color: red;"></p>
-        </div>
+        </section>
     </main>
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
-ㅤ
+
     <footer>
-        &copy; 2025 Mogd Search.
+        &copy; 2025 WebView.
     </footer>
-   
+
     <script>
-          function getBrowser() {
-            const userAgent = navigator.userAgent;
-            if (userAgent.indexOf("Firefox") > -1) {
-                return "Firefox";
-            } else  if (userAgent.indexOf("Chrome") > -1) {
-                return "Chrome";
-            }
-             else {
-                return "Unsupported";
-            }
-        }
-
-        const translations = {
-            ru: {
-                headerTitle: "Открыть файл",
-                enterName: "Введите имя файла",
-                searchButton: "Открыть",
-                 themeButton: "Тёмная тема",
-                incorrectPass: "Неверный пароль."
-            },
-            en: {
-                 loginTitle: "Login",
-                    title: "Login to the site",
-                    enterName: "Enter urlm",
-                            searchButton: "Open",
-                              incorrectPass: "Неверный пароль.",
-                               themeButton: "Change theme",
-                en: {
-                    headerTitle: "Open urlm",
-                    enterName: "Enter urlm",
-                   searchButton: "Open",
-                     themeButton: "Change theme",
-              
-                incorrectPass: "Incorrect password"
-            
-        
-            }}
-        };
-         const headerTitle = document.getElementById('headerTitle');
-        const searchFormTitle = document.getElementById('enterName');
-         const searchButton = document.getElementById('searchButton');
-        const themeButtonText = document.getElementById('themeButton');
- const languageSelect = document.getElementById('languageSelect');
-
-        function changeLanguage() {
-            const selectedLanguage = languageSelect.value;
-            headerTitle.textContent = translations[selectedLanguage].headerTitle;
-              searchFormTitle.textContent = translations[selectedLanguage].enterName;
-                 searchButton.textContent = translations[selectedLanguage].searchButton;
-            themeButtonText.innerHTML= translations[selectedLanguage].themeButton;
-               let element_theme = document.getElementById('changeLanguage');
-        }
-            function toggleTheme() {
-            const body = document.body;
-        
-
-            body.classList.toggle("dark-theme");
-        }
-
-         function openFile() {
-            const filename = document.getElementById('searchInput').value;
-         
-            window.location.href = filename;
-                     const message = document.getElementById('message');
-                message.textContent = ""
-
-           
-        }
-     window.onload = function() {
-   // checkBrowser();
-          
-        };
-            
-    
-
-
         function openFile() {
             const filename = document.getElementById('searchInput').value;
-            window.location.href = filename;
-        }
+            const message = document.getElementById('message');
 
-        function validateInput(input) {
-            const allowedChars = /^[qwert yuiopasdfghjklzxcvbnm QWERT YUIOPASDFGHJKLZXCVBNM 1 2 3 4 5 6 7 8 9 0\. \-]+$/;
-            if (!allowedChars.test(input.value)) {
-                input.value = input.value.replace(/[^qwert yuiopasdfghjklzxcvbnm\.]/g, '');
-                document.getElementById('message').textContent = "Допустимые символы: q w e r t y u i o p a s d f g h j k l z x c v b n m .";
-            } else {
-                document.getElementById('message').textContent = "";
+            
+            let fullFilename = filename;
+            if (!filename.endsWith('.html') && !filename.endsWith('.htm')) {
+                fullFilename = filename + '.html';
+                if (!fileExists(fullFilename)) {
+                    fullFilename = filename + '.htm';
+                }
             }
+  function fileExists(urlToFile) {
+                try {
+                    var req = new XMLHttpRequest();
+                    req.open('HEAD', urlToFile, false);
+                    req.send();
+                    return req.status != 404;
+                } catch (e) {
+                    return false;
+                }
+            }
+            if (fileExists(fullFilename)){
+                       window.location.href = fullFilename; 
+                    } else {
+                        message.textContent = "Сайт не найден.";
+                    }
+        }
+ function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle("dark-theme");
+
         }
     </script>
-
-
 </body>
 </html>
