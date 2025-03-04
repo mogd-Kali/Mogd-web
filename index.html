@@ -3,154 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Открыть файл</title>
+    <title>Steam Xash</title>
     <style>
+       
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s, color 0.3s;
+            background-color: #f0f0f0;
+            color: #333;
         }
-
         header {
-            background-color: #fff;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        main {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .search-form {
-            display: inline-block;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            color: #333;
-            text-align: center;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            width: 100%;
-            max-width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            box-sizing: border-box;
-        }
-
-        button,
-        select {
-            padding: 10px 20px;
-            background-color: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #357ae8;
-        }
-
-        footer {
-            background-color: #fff;
-            color: #333;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Темна тема */
-        body.dark-theme {
-            background-color: #000;
-            color: #fff;
-        }
-
-        .dark-theme header {
-            background-color: #222;
-            color: #fff;
-            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-        }
-
-        .dark-theme .search-form {
             background-color: #333;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 10px;
+            text-align: center;
         }
-
-        .dark-theme input[type="text"] {
-            color: #fff;
-            border: 1px solid #555;
-            background-color: #444;
+        .search-bar {
+            margin: 10px;
+            text-align: center;
         }
-    </style>
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .game-card {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+            text-align: center;
+        }
+        .game-card img {
+            width: 100%;
+            height: auto;
+        }
+        /* Темная тема */
+        body.dark-theme {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+        body.dark-theme .game-card {
+            background-color: #555;
+            color: #f0f0f0;
+            border: 1px solid #777;
+        }
+        body.dark-theme header {
+            background-color: #111;
+        }
+        /* Кнопка переключения темы */
+        .theme-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        /* Стили для кнопки "Скачать" */
+        .game-card a button {
+            background-color: #808080; /* Серый цвет */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .game-card a button:hover {
+            background-color: #606060; /* Более темный серый при наведении */
+        }
+</style>
 </head>
-
 <body>
     <header>
-        <h1 id="headerTitle">Mogd WebView</h1>
-        <button onclick="toggleTheme()" id="themeButton">Тёмная тема</button>
+        <h1>Steam Xash</h1>
     </header>
+    <button class="theme-switcher" onclick="toggleTheme()">Сменить тему</button>
+    <div class="search-bar">
+        <input type="text" placeholder="Поиск игры...">
+        <button>Найти</button>
+    </div>
+    <div class="game-list">
+        
 
-    <main>
-        <section class="search-form">
-            <h2 id="enterName">Введите urlm</h2>
-            <input type="text" class="search-input" placeholder="Например, mogd.web" id="searchInput">
-            <button class="search-button" onclick="openFile()">Открыть</button>
-            <p id="message" style="color: red;"></p>
-        </section>
-    </main>
 
-    <footer>
-        &copy; 2025 WebView.
-    </footer>
 
+
+
+
+<div class="game-card">
+            <img src="https://i.postimg.cc/VkfZ5gDd/IMG-20250305-002426-449.jpg" alt="CS:GORED20">
+            <h3>CS:GO RED 2.0 FIXED</h3>
+            <a href="https://t.me/CS16_Android/804" target="_blank"><button>Скачать</button></a>
+        </div>
+
+
+
+<div class="game-card">
+            <img src="https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg?t=1679673984" alt="Counter-Strike: Global Offensive">
+            <h3>Counter-Strike: Global Offensive</h3>
+            <a href="https://t.me/c/2450195239/6" target="_blank"><button>Скачать</button></a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
     <script>
-        function openFile() {
-            const filename = document.getElementById('searchInput').value;
-            const message = document.getElementById('message');
-
-            
-            let fullFilename = filename;
-            if (!filename.endsWith('.html') && !filename.endsWith('.htm')) {
-                fullFilename = filename + '.html';
-                if (!fileExists(fullFilename)) {
-                    fullFilename = filename + '.htm';
-                }
-            }
-  function fileExists(urlToFile) {
-                try {
-                    var req = new XMLHttpRequest();
-                    req.open('HEAD', urlToFile, false);
-                    req.send();
-                    return req.status != 404;
-                } catch (e) {
-                    return false;
-                }
-            }
-            if (fileExists(fullFilename)){
-                       window.location.href = fullFilename; 
-                    } else {
-                        message.textContent = "Сайт не найден.";
-                    }
-        }
- function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle("dark-theme");
-
+        function toggleTheme() {
+            const body = document.querySelector('body');
+            body.classList.toggle('dark-theme');
         }
     </script>
 </body>
