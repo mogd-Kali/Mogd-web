@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Xash</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .search-bar {
+            margin: 10px;
+            text-align: center;
+        }
+        .game-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .game-card {
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: white;
+            text-align: center;
+        }
+        .game-card img {
+            width: 100%;
+            height: auto;
+        }
+        /* Темная тема */
+        body.dark-theme {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+        body.dark-theme .game-card {
+            background-color: #555;
+            color: #f0f0f0;
+            border: 1px solid #777;
+        }
+        body.dark-theme header {
+            background-color: #111;
+        }
+        /* Кнопка переключения темы */
+        .theme-switcher {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        /* Стили для кнопки "Скачать" */
+        .game-card a button {
+            background-color: #808080; /* Серый цвет */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .game-card a button:hover {
+            background-color: #606060; /* Более темный серый при наведении */
+        }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Steam Xash</h1>
+    </header>
+    <button class="theme-switcher" onclick="toggleTheme()">Сменить тему</button>
+    <div class="search-bar">
+        <input type="text" placeholder="Поиск игры...">
+        <button>Найти</button>
+    </div>
+    <div class="game-list">
+        
+
+
+
+
+
+
+<div class="game-card">
+            <img src="https://i.postimg.cc/VkfZ5gDd/IMG-20250305-002426-449.jpg" alt="CS:GORED20">
+            <h3>CS:GO RED 2.0 FIXED</h3>
+            <a href="https://t.me/CS16_Android/804" target="_blank"><button>Скачать</button></a>
+        </div>
+
+
+
+<div class="game-card">
+            <img src="https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg?t=1679673984" alt="Counter-Strike: Global Offensive">
+            <h3>Counter-Strike: Global Offensive</h3>
+            <a href="https://t.me/c/2450195239/6" target="_blank"><button>Скачать</button></a>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        
+    </div>
+    <script>
+        function toggleTheme() {
+            const body = document.querySelector('body');
+            body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>
