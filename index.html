@@ -3,136 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steam Xash</title>
+    <title id="title">mogd web</title>
     <style>
-       
+        /* Светлая тема (по умолчанию) */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f0f0f0;
             color: #333;
+            transition: background-color 0.3s, color 0.3s;
         }
+
         header {
-            background-color: #333;
-            color: white;
-            padding: 10px;
+            background-color: #fff;
+            color: #333;
             text-align: center;
-        }
-        .search-bar {
-            margin: 10px;
-            text-align: center;
-        }
-        .game-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
             padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex; /* Добавлено для выравнивания элементов */
+            justify-content: space-between; /* Добавлено для выравнивания элементов */
+            align-items: center; /* Добавлено для выравнивания элементов */
         }
-        .game-card {
-            width: 200px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: white;
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-form {
+            display: inline-block;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #333;
             text-align: center;
         }
-        .game-card img {
+
+        input[type="text"] {
+            padding: 10px;
             width: 100%;
-            height: auto;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
         }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #357ae8;
+        }
+
+        footer {
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
         /* Темная тема */
         body.dark-theme {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .dark-theme header {
+            background-color: #222;
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-theme .search-form {
             background-color: #333;
-            color: #f0f0f0;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
         }
-        body.dark-theme .game-card {
-            background-color: #555;
-            color: #f0f0f0;
-            border: 1px solid #777;
+
+        .dark-theme input[type="text"] {
+            color: #fff;
+            border: 1px solid #555;
+            background-color: #444;
         }
-        body.dark-theme header {
-            background-color: #111;
-        }
-        /* Кнопка переключения темы */
-        .theme-switcher {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        /* Стили для кнопки "Скачать" */
-        .game-card a button {
-            background-color: #808080; /* Серый цвет */
-            color: white;
+
+        #themeButton {
             padding: 10px 20px;
+            background-color: #808080;
+            color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
         }
-        .game-card a button:hover {
-            background-color: #606060; /* Более темный серый при наведении */
+
+        .language-selector {
+            display: flex;
+            align-items: center;
         }
-</style>
+
+        .language-selector label {
+            margin-right: 5px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 600px) {
+            .search-form {
+                width: 90%;
+                padding: 15px;
+            }
+            input[type="text"] {
+                width: 100%;
+            }
+
+            header {
+                flex-direction: column; /* Для мобильных устройств перестраиваем header в колонку */
+                align-items: center; /* Центрируем элементы в header */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Steam Xash</h1>
+        <h1 id="headerTitle">mogd web</h1>
+        <div class="language-selector">
+            <label for="languageSelect">Язык-Language:</label>
+            <select id="languageSelect" onchange="changeLanguage()">
+                <option value="ru" selected>Русский</option>
+                <option value="en">English</option>
+            </select>
+            <button onclick="toggleTheme()" id="themeButton">Темная тема</button>
+        </div>
     </header>
-    <button class="theme-switcher" onclick="toggleTheme()">Сменить тему</button>
-    <div class="search-bar">
-        <input type="text" placeholder="Поиск игры...">
-        <button>Найти</button>
-    </div>
-    <div class="game-list">
-        
 
-
-
-
-
-
-<div class="game-card">
-            <img src="https://i.postimg.cc/VkfZ5gDd/IMG-20250305-002426-449.jpg" alt="CS:GORED20">
-            <h3>CS:GO RED 2.0 FIXED</h3>
-            <a href="https://t.me/CS16_Android/804" target="_blank"><button>Скачать</button></a>
+    <main>
+        <div class="search-form">
+            <h2 id="enterName">введите urlm-сайта</h2>
+            <input type="text" class="search-input" placeholder="Например, mogd.web" id="searchInput" oninput="validateInput(this)" maxlength="10">
+            <button class="search-button" onclick="openFile()" id="searchButton">Открыть</button>
+            <p id="message" style="color: red;"></p>
         </div>
+    </main>
 
+    <footer>
+        &copy; 2025 Mogd Search.
+    </footer>
 
-
-<div class="game-card">
-            <img src="https://cdn.akamai.steamstatic.com/steam/apps/730/header.jpg?t=1679673984" alt="Counter-Strike: Global Offensive">
-            <h3>Counter-Strike: Global Offensive</h3>
-            <a href="https://t.me/c/2450195239/6" target="_blank"><button>Скачать</button></a>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-        
-    </div>
     <script>
+        const translations = {
+            ru: {
+                headerTitle: "Открыть файл",
+                enterName: "Введите имя файла",
+                searchButton: "Открыть",
+                themeButton: "Тёмная тема",
+                incorrectPass: "Неверный пароль."
+            },
+            en: {
+                headerTitle: "Open urlm",
+                enterName: "Enter urlm",
+                searchButton: "Open",
+                themeButton: "Change theme",
+                incorrectPass: "Incorrect password"
+            }
+        };
+
+        const headerTitle = document.getElementById('headerTitle');
+        const searchFormTitle = document.getElementById('enterName');
+        const searchButton = document.getElementById('searchButton');
+        const themeButtonText = document.getElementById('themeButton');
+        const languageSelect = document.getElementById('languageSelect');
+
+        function changeLanguage() {
+            const selectedLanguage = languageSelect.value;
+            headerTitle.textContent = translations[selectedLanguage].headerTitle;
+            searchFormTitle.textContent = translations[selectedLanguage].enterName;
+            searchButton.textContent = translations[selectedLanguage].searchButton;
+            themeButtonText.textContent = translations[selectedLanguage].themeButton;
+        }
+
         function toggleTheme() {
-            const body = document.querySelector('body');
-            body.classList.toggle('dark-theme');
+            const body = document.body;
+            body.classList.toggle("dark-theme");
+        }
+
+        function openFile() {
+            let filename = document.getElementById('searchInput').value;
+            const message = document.getElementById('message');
+            message.textContent = "";
+
+            // Проверяем, начинается ли имя файла с http или https
+            if (filename.startsWith('http://') || filename.startsWith('https://')) {
+                window.location.href = filename; // Открываем URL как есть
+                return; // Выходим из функции, если это URL
+            }
+
+            // Добавляем .html, если его нет
+            let fullFilename = filename;
+            if (!filename.endsWith('.html')) {
+                fullFilename = filename + '.html';
+            }
+
+            window.location.href = fullFilename;
+        }
+
+        function validateInput(input) {
+            const allowedChars = /^[a-z0-9\.\-]+$/; // Разрешены только латинские буквы, цифры, точки и дефисы
+            if (!allowedChars.test(input.value)) {
+                input.value = input.value.replace(/[^a-z0-9\.\-]/g, '');
+                document.getElementById('message').textContent = "Допустимые символы: a-z, 0-9, . и -";
+            } else {
+                document.getElementById('message').textContent = "";
+            }
         }
     </script>
 </body>
