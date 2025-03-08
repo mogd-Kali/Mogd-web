@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Репозиторий (Пример) - Mithub</title>
+  <style>
+    /*  Красная и черная тема */
+    body {
+      font-family: sans-serif;
+      background-color: #000; /* Черный фон */
+      color: #fff; /* Белый текст (для контраста) */
+      margin: 0; /* Убираем стандартные отступы body */
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    /* Верхняя панель */
+    .top-bar {
+      background-color: #222; /* Темно-серый фон */
+      color: #fff;
+      display: flex;
+      justify-content: space-between; /* Распределяем элементы по краям */
+      align-items: center;
+      padding: 10px 20px; /* Отступы сверху и снизу, слева и справа */
+    }
+
+    .top-bar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #f00; /* Красный цвет для логотипа */
+    }
+
+    .top-bar .icon {
+      width: 50px; /* Примерный размер иконки */
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto; /* Центрируем иконку по горизонтали */
+      display: block; /* Важно для margin: 0 auto */
+    }
+
+    .top-bar .icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Масштабируем изображение, сохраняя пропорции */
+    }
+
+    .mithub-repo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #222; /* Темно-серый для заголовка */
+      padding: 10px;
+      border-bottom: 2px solid #f00; /* Красная граница снизу */
+      margin-top: 20px; /* Отступ от верхней панели */
+    }
+
+    .mithub-repo-header h1 {
+      color: #f00; /* Красный заголовок репозитория */
+    }
+
+    .file-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .file-list li {
+      padding: 5px;
+      border-bottom: 1px solid #555; /* Темно-серая граница */
+    }
+
+    .file-list a {
+      color: #ccc; /* Светло-серый для ссылок */
+      text-decoration: none;
+    }
+
+    .file-list a:hover {
+      color: #f00; /* Красный при наведении на ссылку */
+    }
+
+    h2 {
+      color: #f00; /* Красный заголовок разделов */
+      margin-top: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #777; /* Темно-серый для подвала */
+    }
+
+    button {
+      background-color: #f00; /* Красная кнопка */
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d00; /* Более темный красный при наведении */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Верхняя панель -->
+  <div class="top-bar">
+    <div class="logo">Mithub</div>
+    <div class="icon">
+      <img src="https://i.postimg.cc/gc8rjdgk/Background-Eraser-20250308-141344861.png" alt="Mithub Icon">
+    </div>
+    <div class="logo">Mithub</div>
+  </div>
+
+  <div class="container">
+    <header class="mithub-repo-header">
+      <h1>Имя репозитория</h1>
+      <div>
+        <button>Clone</button>
+        <button>Fork</button>
+      </div>
+    </header>
+
+    
+
+    <h2>Быстрый поиск</h2>
+    <ul>
+      <li>X-osint</li>
+      <li>L-osint</li>
+      <!--  Список вкладчиков (динамический) -->
+    </ul>
+
+    <h2>Файлы</h2>
+    <ul class="file-list">
+      <li><a href="#">README.md</a></li>
+      <li><a href="#">index.html</a></li>
+      <li><a href="#">style.css</a></li>
+      <!--  Список файлов репозитория (динамический) -->
+    </ul>
+
+    <footer>
+      <p>© 2025 Mithub</p>
+    </footer>
+  </div>
+
+</body>
+</html>
